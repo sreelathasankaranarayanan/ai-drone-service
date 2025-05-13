@@ -1,75 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HR Portal</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Website - [Your Company Name]</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    ul {
+      margin-top: 0;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      max-height: 400px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+    }
+    #chat-header {
+      background: #2c3e50;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+    #chat-body {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    #chat-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    #chat-input input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+    }
+    #chat-input button {
+      border: none;
+      background: #2c3e50;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Company Logo" class="logo">
-    <h1>HR Portal</h1>
-    <nav>
-      <ul>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#leave">Leave</a></li>
-        <li><a href="#documents">Documents</a></li>
-        <li><a href="#announcements">News</a></li>
-      </ul>
-    </nav>
+    <h1>[Your Company Name]</h1>
   </header>
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#mission">Company Mission</a>
+    <a href="#policy">Leave Policy</a>
+    <a href="#onboarding">Onboarding</a>
+  </nav>
 
-  <main>
-    <section id="dashboard" class="panel">
-      <h2>Welcome, Employee</h2>
-      <p>Your last login: <span id="last-login">Just now</span></p>
-    </section>
-
-    <section id="leave" class="panel">
-      <h2>Leave Request</h2>
-      <form id="leave-form">
-        <label for="start-date">Start Date:</label>
-        <input type="date" id="start-date" required>
-        <label for="end-date">End Date:</label>
-        <input type="date" id="end-date" required>
-        <label for="reason">Reason:</label>
-        <textarea id="reason" required></textarea>
-        <button type="submit">Submit Request</button>
-      </form>
-    </section>
-
-    <section id="documents" class="panel">
-      <h2>Upload Documents</h2>
-      <input type="file" id="upload-doc" multiple>
-      <button onclick="uploadDocuments()">Upload</button>
-    </section>
-
-    <section id="announcements" class="panel">
-      <h2>HR Announcements</h2>
-      <ul id="announcement-list">
-        <li>🎉 New Health Policy for 2025</li>
-        <li>📅 Upcoming company town hall on May 20th</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 YourCompany HR Portal</p>
-  </footer>
-
-  <script src="script.js"></script>
-  <!-- Chatbot UI -->
-<div class="chatbot">
-  <div class="chatbot-header" onclick="toggleChatbot()">💬 HR Chatbot</div>
-  <div class="chatbot-body" id="chat-body">
-    <div class="bot-msg">Hi! I’m your HR Assistant. Ask me about leave, holidays, or benefits.</div>
+  <div class="container" id="about">
+    <h1>About Our Company</h1>
+    <p>[Your Company Name] was founded with the vision to innovate and transform industries through technology and dedication. Our team of passionate professionals brings diverse expertise to create value-driven solutions for our clients worldwide. We prioritize integrity, transparency, and growth, aiming to foster a collaborative and inclusive workplace where every individual is empowered to thrive.</p>
   </div>
-  <div class="chatbot-input">
-    <input type="text" id="chat-input" placeholder="Type your question..." onkeydown="handleChat(event)">
-    <button onclick="sendChat()">Send</button>
+
+  <div class="container" id="mission">
+    <h1>Our Mission</h1>
+    <p>At [Your Company Name], our mission is to empower individuals and organizations by delivering innovative, reliable, and sustainable solutions. We are committed to fostering a culture of excellence, integrity, and continuous improvement that drives positive change for our clients, employees, and the communities we serve.</p>
   </div>
+
+  <div class="container" id="policy">
+  <h1>Employee Leave Policy</h1>
+  <p><strong>Effective Date:</strong> [Insert Date]<br>
+  <strong>Policy Owner:</strong> Human Resources Department<br>
+  <strong>Applies To:</strong> All full-time and part-time employees of [Your Company Name]</p>
+
+  <div class="section">
+    <h2>1. Purpose</h2>
+    <p>This policy outlines the various types of leave available to employees, the conditions under which leave may be taken, and the procedures for requesting and approving leave.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Types of Leave</h2>
+
+    <h3>2.1. Casual Leave</h3>
+    <p>Employees are entitled to 8 days of casual leave per year. Casual leave can be taken for personal reasons, emergencies, or short-term needs. Casual leave requests must be submitted and approved by the immediate manager in advance, unless there is an emergency. Casual leave cannot be carried over to the following year.</p>
+
+    <h3>2.2. Earned Leave (Annual Leave)</h3>
+    <p>Employees accumulate 1.25 days of earned leave per month, totaling 15 days annually. Earned leave is generally used for vacations or personal time off. Up to 5 days of earned leave can be carried over to the next year. Any additional unused days beyond this limit will be forfeited unless otherwise specified by the company policy.</p>
+
+    <h3>2.3. Sick Leave</h3>
+    <p>Employees are entitled to 10 days of sick leave per year. Sick leave can be used when an employee is unable to work due to illness or medical reasons. A medical certificate is required if the absence exceeds 2 consecutive days. Unused sick leave cannot be carried over to the next year.</p>
+
+    <h3>2.4. Maternity Leave</h3>
+    <p>Eligible female employees are entitled to 26 weeks of maternity leave with full pay. Employees must have completed at least 6 months of continuous service. Employees must notify HR at least 8 weeks prior to the expected delivery date.</p>
+
+    <h3>2.5. Paternity Leave</h3>
+    <p>Eligible male employees are entitled to 10 working days of paternity leave within 3 months of the child's birth. Paternity leave requests should be submitted at least 2 weeks in advance.</p>
+
+    <h3>2.6. Bereavement Leave</h3>
+    <p>Employees are entitled to 3 days of paid leave in the event of a death in the immediate family (spouse, children, parents, siblings). Employees must inform HR as soon as possible regarding the need for bereavement leave.</p>
+
+    <h3>2.7. Public Holiday Leave</h3>
+    <p>Employees are entitled to all official public holidays as per the government of the respective location. If an employee works on a public holiday, they will be compensated with time off in lieu or overtime pay, as per company policy.</p>
+
+    <h3>2.8. Unpaid Leave</h3>
+    <p>Employees can request unpaid leave if they have exhausted all other paid leave options. Unpaid leave requests must be submitted in advance and are subject to manager and HR approval.</p>
+
+    <h3>2.9. Emergency Leave</h3>
+    <p>Employees can request emergency leave in cases of unforeseen events (e.g., family emergencies). Employees must inform HR and their manager as soon as possible. Emergency leave may be granted with or without pay depending on the circumstances.</p>
+
+    <h3>2.10. Leave Encashment</h3>
+    <p>Unused earned leave and casual leave may be encashed at the end of the year or upon leaving the company. Encashment is paid out based on the employee's last drawn salary.</p>
+  </div>
+
+  <div class="section">
+    <h2>3. General Guidelines</h2>
+    <p>All leave requests must be submitted through the company's leave management system or the prescribed form. Employees are responsible for managing their leave balance. HR will monitor leave records and notify employees when their balance is low. All leave must be approved by the employee's direct supervisor and HR. If leave is taken without approval, it will be considered unauthorized and may lead to disciplinary action.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Amendments</h2>
+    <p>This policy is subject to change and may be revised as per company needs or statutory requirements. Employees will be notified of any significant changes.</p>
+  </div>
+
+  <p><strong>Approved by:</strong><br>
+  [HR Head Name]<br>
+  [Designation]<br>
+  [Signature]<br>
+  [Date]</p>
 </div>
 
+  <div class="container" id="onboarding">
+    <h1>New Employee Onboarding Guide</h1>
+    <p>Welcome to [Your Company Name]! We're excited to have you on board. This guide provides a quick overview to help you get started:</p>
+    <ul>
+      <li><strong>Day 1:</strong> Meet your team, receive your welcome kit, and complete HR formalities.</li>
+      <li><strong>Week 1:</strong> Introduction to our company values, policies, tools, and training sessions.</li>
+      <li><strong>First 30 Days:</strong> Participate in ongoing training, begin contributing to team projects, and attend regular check-ins with your manager.</li>
+      <li><strong>Resources:</strong> Access the employee handbook, IT support, and learning portal through your employee dashboard.</li>
+    </ul>
+    <p>If you have any questions, feel free to reach out to your onboarding buddy or HR representative. We're here to support you every step of the way!</p>
+  </div>
+
+  <!-- Chatbot Component -->
+  <div id="chatbot">
+    <div id="chat-header">HR Chatbot</div>
+    <div id="chat-body"></div>
+    <div id="chat-input">
+      <input type="text" id="userInput" placeholder="Ask a question...">
+      <button onclick="handleChat()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const chatBody = document.getElementById('chat-body');
+    function handleChat() {
+      const input = document.getElementById('userInput');
+      const question = input.value.trim();
+      if (!question) return;
+
+      addMessage('You', question);
+      input.value = '';
+
+      const response = getBotResponse(question.toLowerCase());
+      setTimeout(() => addMessage('Bot', response), 500);
+    }
+
+    function addMessage(sender, text) {
+      const msg = document.createElement('div');
+      msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+      msg.style.marginBottom = '10px';
+      chatBody.appendChild(msg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function getBotResponse(input) {
+      if (input.includes('sick leave')) return 'You are entitled to 10 days of sick leave per year. A medical certificate is required for absences longer than 2 days.';
+      if (input.includes('annual leave') || input.includes('pto')) return 'You accrue 1.5 days of paid time off per month, which totals 18 days annually. Up to 5 days can carry over to the next year.';
+      if (input.includes('maternity')) return 'Maternity leave is 26 weeks for eligible female employees with at least 6 months of service.';
+      if (input.includes('paternity')) return 'Paternity leave is 10 working days within 3 months of the child's birth.';
+      if (input.includes('bereavement') || input.includes('compassionate')) return 'You may take up to 3 days of paid leave in the event of a death in the immediate family.';
+      if (input.includes('public holiday')) return 'You are entitled to all official public holidays. If you work on these days, you will be compensated with time off or extra pay.';
+      if (input.includes('unpaid leave')) return 'Unpaid leave can be requested if all paid leave is used, subject to manager and HR approval.';
+      if (input.includes('encashment')) return 'Unused PTO may be encashed at year-end or upon leaving the company.';
+      if (input.includes('emergency leave')) return 'Emergency leave should be communicated promptly and will be handled based on the situation.';
+      if (input.includes('mission') || input.includes('goal')) return 'Our mission is to empower individuals and organizations by delivering innovative, reliable, and sustainable solutions.';
+      if (input.includes('about') || input.includes('company')) return '[Your Company Name] was founded to innovate and transform industries through technology and dedication, fostering a collaborative and inclusive workplace.';
+      if (input.includes('onboarding') || input.includes('new employee')) return 'New employees meet the team, complete HR formalities, and receive training. You'll have support from HR and your onboarding buddy throughout your first month.';
+      return 'I'm here to help with company information and policies! Please ask a specific question.';
+    }
+  </script>
 </body>
 </html>
