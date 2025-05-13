@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HR Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="Company Logo" class="logo">
+    <h1>HR Portal</h1>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#leave">Leave</a></li>
+        <li><a href="#documents">Documents</a></li>
+        <li><a href="#announcements">News</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard" class="panel">
+      <h2>Welcome, Employee</h2>
+      <p>Your last login: <span id="last-login">Just now</span></p>
+    </section>
+
+    <section id="leave" class="panel">
+      <h2>Leave Request</h2>
+      <form id="leave-form">
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" required>
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date" required>
+        <label for="reason">Reason:</label>
+        <textarea id="reason" required></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </section>
+
+    <section id="documents" class="panel">
+      <h2>Upload Documents</h2>
+      <input type="file" id="upload-doc" multiple>
+      <button onclick="uploadDocuments()">Upload</button>
+    </section>
+
+    <section id="announcements" class="panel">
+      <h2>HR Announcements</h2>
+      <ul id="announcement-list">
+        <li>🎉 New Health Policy for 2025</li>
+        <li>📅 Upcoming company town hall on May 20th</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 YourCompany HR Portal</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Chatbot UI -->
+<div class="chatbot">
+  <div class="chatbot-header" onclick="toggleChatbot()">💬 HR Chatbot</div>
+  <div class="chatbot-body" id="chat-body">
+    <div class="bot-msg">Hi! I’m your HR Assistant. Ask me about leave, holidays, or benefits.</div>
+  </div>
+  <div class="chatbot-input">
+    <input type="text" id="chat-input" placeholder="Type your question..." onkeydown="handleChat(event)">
+    <button onclick="sendChat()">Send</button>
+  </div>
+</div>
+
+</body>
+</html>
